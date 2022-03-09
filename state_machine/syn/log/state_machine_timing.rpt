@@ -7,7 +7,7 @@ Report : timing
         -max_paths 1
 Design : state_machine
 Version: O-2018.06-SP1
-Date   : Tue Mar  8 16:42:20 2022
+Date   : Wed Mar  9 04:26:19 2022
 ****************************************
 
 Operating Conditions: WCCOM   Library: lsi_10k

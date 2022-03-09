@@ -1,6 +1,6 @@
 
 `ifndef state_machine
-`include "state_machine.v"
+`include "../src/state_machine.v"
 `endif
 
 `default_nettype none

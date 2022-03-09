@@ -53,6 +53,8 @@ always @(posedge clk, negedge rst_n) begin : STATE_ASSIGNMENT
                 curr_state <= S7;
             S7:
                 curr_state <= S0;
+            default:
+                curr_state <= S0;
         endcase
     end
 end
@@ -85,6 +87,8 @@ always @(*) begin: OUTPUT_LOGIC
             S6:
                 outp = 0;
             S7:
+                outp = 0;
+            default:
                 outp = 0;
     endcase
 end
