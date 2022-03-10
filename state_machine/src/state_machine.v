@@ -32,7 +32,7 @@ always @(posedge clk, negedge rst_n) begin : STATE_ASSIGNMENT
     end else begin
         case (curr_state)
             S0: 
-                if ( b[1] | b[2] | (b[3] & b[1]) | (b[3] & b[2]) ) begin
+                if ( (~b[2] & b[1]) + (b[2] & ~b[1]) ) begin
 		   curr_state <= S1;
 		end
 

@@ -34,13 +34,18 @@ end
 initial $vcdpluson();
 `endif
 
+integer  i;
+
 initial begin
     rst_n<=1'b1;clk<=1'b0;
-    #(CLK_PERIOD/4) rst_n<=1; b <= 3'h1;
-    #(CLK_PERIOD*24) b <= 3'h2;
-    #(CLK_PERIOD*24) b <= 3'h5;
-    #(CLK_PERIOD*24) b <= 3'h6;
-    #(CLK_PERIOD*24) b <= 3'hF;
+    #(CLK_PERIOD/4) rst_n<=1;
+	for (i = 0; i <= 7; i = i + 1) begin
+		 #(CLK_PERIOD*24) b <= i;
+	end
+//    #(CLK_PERIOD*24) b <= 3'h2;
+//    #(CLK_PERIOD*24) b <= 3'h5;
+//    #(CLK_PERIOD*24) b <= 3'h6;
+//    #(CLK_PERIOD*24) b <= 3'hF;
     #(CLK_PERIOD*24)$finish;
 end
 
