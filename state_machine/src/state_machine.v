@@ -24,6 +24,11 @@ localparam S5 = 3'h5;
 localparam S6 = 3'h6;
 localparam S7 = 3'h7;
 
+localparam B1	 = 3'b001;
+localparam B3B1	 = 3'b101;
+localparam B2	 = 3'b010;
+localparam B3B2	 = 3'b110;
+
 reg [2:0] curr_state;
 
 always @(posedge clk, negedge rst_n) begin : STATE_ASSIGNMENT
@@ -32,7 +37,7 @@ always @(posedge clk, negedge rst_n) begin : STATE_ASSIGNMENT
     end else begin
         case (curr_state)
             S0: 
-                if ( (~b[2] & b[1]) + (b[2] & ~b[1]) ) begin
+                if ( b == B1 || b == B3B1 || b == B2 || b == B3B2 ) begin
 		   curr_state <= S1;
 		end
 
@@ -44,7 +49,7 @@ always @(posedge clk, negedge rst_n) begin : STATE_ASSIGNMENT
             S2:
                 curr_state <= S3;
             S3:
-                if (b[2] | (b[3] & b[2])) begin
+                if (b == B2 || b == B3B2) begin
                     curr_state <= S4;
                 end
 
@@ -72,7 +77,7 @@ always @(*) begin: OUTPUT_LOGIC
             S1:
                 outp = 0;
             S2:
-                if ((b[3] & b[1]) | (b[3] & b[2])) begin
+                if (b[3]) begin
                     outp = 1;
                 end
                 else begin
