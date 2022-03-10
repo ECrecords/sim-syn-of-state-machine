@@ -40,6 +40,7 @@ initial begin
     #(CLK_PERIOD*24) b <= 3'h2;
     #(CLK_PERIOD*24) b <= 3'h5;
     #(CLK_PERIOD*24) b <= 3'h6;
+    #(CLK_PERIOD*24) b <= 3'hF;
     #(CLK_PERIOD*24)$finish;
 end
 

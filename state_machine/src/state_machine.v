@@ -31,8 +31,14 @@ always @(posedge clk, negedge rst_n) begin : STATE_ASSIGNMENT
         curr_state <= S0;
     end else begin
         case (curr_state)
-            S0:
-                curr_state <= S1;
+            S0: 
+                if ( b[1] | b[2] | (b[3] & b[1]) | (b[3] & b[2]) ) begin
+		   curr_state <= S1;
+		end
+
+		else begin
+		   curr_state <= S0;
+		end
             S1:
                 curr_state <= S2;
             S2:
@@ -73,13 +79,7 @@ always @(*) begin: OUTPUT_LOGIC
                     outp = 0;
                 end
             S3:
-                if ( b[1] | b[2] | (b[3] & b[1]) | (b[3] & b[2]) ) begin
-                    outp = 1; 
-                end 
-
-                else begin
-                    outp = 0;    
-                end
+                outp = 1; 
             S4:
                 outp = 0;
             S5:
