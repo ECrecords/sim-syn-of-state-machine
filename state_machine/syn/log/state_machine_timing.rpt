@@ -7,15 +7,15 @@ Report : timing
         -max_paths 1
 Design : state_machine
 Version: O-2018.06-SP1
-Date   : Thu Mar 10 09:55:11 2022
+Date   : Thu Mar 10 10:07:16 2022
 ****************************************
 
 Operating Conditions: WCCOM   Library: lsi_10k
 Wire Load Model Mode: top
 
-  Startpoint: curr_state_reg[0]
+  Startpoint: pr_state_reg[0]
               (rising edge-triggered flip-flop clocked by clk)
-  Endpoint: curr_state_reg[2]
+  Endpoint: pr_state_reg[2]
             (rising edge-triggered flip-flop clocked by clk)
   Path Group: clk
   Path Type: max
@@ -24,18 +24,18 @@ Wire Load Model Mode: top
   -----------------------------------------------------------
   clock clk (rise edge)                    0.00       0.00
   clock network delay (ideal)              0.00       0.00
-  curr_state_reg[0]/CP (FD2)               0.00       0.00 r
-  curr_state_reg[0]/Q (FD2)                3.58       3.58 r
+  pr_state_reg[0]/CP (FD2)                 0.00       0.00 r
+  pr_state_reg[0]/Q (FD2)                  3.58       3.58 r
   U6/Z (AN2P)                              1.27       4.85 r
   U14/Z (ND4)                              1.10       5.95 f
   U13/Z (AO7)                              1.46       7.41 r
-  curr_state_reg[2]/D (FD2)                0.00       7.41 r
+  pr_state_reg[2]/D (FD2)                  0.00       7.41 r
   data arrival time                                   7.41
 
   clock clk (rise edge)                  100.00     100.00
   clock network delay (ideal)              0.00     100.00
   clock uncertainty                       -1.00      99.00
-  curr_state_reg[2]/CP (FD2)               0.00      99.00 r
+  pr_state_reg[2]/CP (FD2)                 0.00      99.00 r
   library setup time                      -0.85      98.15
   data required time                                 98.15
   -----------------------------------------------------------

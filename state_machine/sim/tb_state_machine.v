@@ -50,7 +50,7 @@ initial begin
 end
 
 always @(b, outp) begin
-    $display("\nFSM State: %h", uut.curr_state);
+    $display("\nFSM State: %h", uut.pr_state);
     $display("clk: %b, B1: %b, B2: %b, B3: %b, | OUTPUT: %b", clk, b[1], b[2], b[3], outp);
 end
 
