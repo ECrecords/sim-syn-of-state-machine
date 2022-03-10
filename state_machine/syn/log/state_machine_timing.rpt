@@ -7,13 +7,13 @@ Report : timing
         -max_paths 1
 Design : state_machine
 Version: O-2018.06-SP1
-Date   : Wed Mar  9 04:26:19 2022
+Date   : Thu Mar 10 09:55:11 2022
 ****************************************
 
 Operating Conditions: WCCOM   Library: lsi_10k
 Wire Load Model Mode: top
 
-  Startpoint: curr_state_reg[1]
+  Startpoint: curr_state_reg[0]
               (rising edge-triggered flip-flop clocked by clk)
   Endpoint: curr_state_reg[2]
             (rising edge-triggered flip-flop clocked by clk)
@@ -24,13 +24,13 @@ Wire Load Model Mode: top
   -----------------------------------------------------------
   clock clk (rise edge)                    0.00       0.00
   clock network delay (ideal)              0.00       0.00
-  curr_state_reg[1]/CP (FD2)               0.00       0.00 r
-  curr_state_reg[1]/QN (FD2)               3.40       3.40 f
-  U14/Z (NR2)                              1.99       5.39 r
-  U13/Z (ND2)                              0.40       5.80 f
-  U11/Z (AO4)                              2.20       8.00 r
-  curr_state_reg[2]/D (FD2)                0.00       8.00 r
-  data arrival time                                   8.00
+  curr_state_reg[0]/CP (FD2)               0.00       0.00 r
+  curr_state_reg[0]/Q (FD2)                3.58       3.58 r
+  U6/Z (AN2P)                              1.27       4.85 r
+  U14/Z (ND4)                              1.10       5.95 f
+  U13/Z (AO7)                              1.46       7.41 r
+  curr_state_reg[2]/D (FD2)                0.00       7.41 r
+  data arrival time                                   7.41
 
   clock clk (rise edge)                  100.00     100.00
   clock network delay (ideal)              0.00     100.00
@@ -40,9 +40,9 @@ Wire Load Model Mode: top
   data required time                                 98.15
   -----------------------------------------------------------
   data required time                                 98.15
-  data arrival time                                  -8.00
+  data arrival time                                  -7.41
   -----------------------------------------------------------
-  slack (MET)                                        90.15
+  slack (MET)                                        90.74
 
 
 1
