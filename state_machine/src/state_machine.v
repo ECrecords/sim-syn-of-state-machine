@@ -20,24 +20,24 @@ input rst_n;
 input [3:1] b;
 output reg outp;
 
-// state encoding
-localparam S0 = 3'h0;
-localparam S1 = 3'h1;
-localparam S2 = 3'h2;
-localparam S3 = 3'h3;
-localparam S4 = 3'h4;
-localparam S5 = 3'h5;
-localparam S6 = 3'h6;
-localparam S7 = 3'h7;
+// state encoding - one-hot
+localparam S0 = 8'h01;
+localparam S1 = 8'h02;
+localparam S2 = 8'h04;
+localparam S3 = 8'h08;
+localparam S4 = 8'h10;
+localparam S5 = 8'h20;
+localparam S6 = 8'h40;
+localparam S7 = 8'h80;
 
 // input combinations
-localparam B1	 = 3'b001;
-localparam B3B1	 = 3'b101;
-localparam B2	 = 3'b010;
-localparam B3B2	 = 3'b110;
+localparam B1	 = 3'b001; // 0001
+localparam B3B1	 = 3'b101; // 0011
+localparam B2	 = 3'b010; // 0000 0001
+localparam B3B2	 = 3'b110; // 0000 0011
 
 
-reg [2:0] pr_state, nx_state;
+reg [7:0] pr_state, nx_state;
 
 // the combinational calculated nx_state is assigned sequentially to pr_state
 always @(posedge clk, negedge rst_n) begin : STATE_ASSIGNMENT
@@ -53,34 +53,34 @@ always @(*) begin: NEXT_STATE_LOGIC
     case (pr_state)
         S0: 
             if ( b == B1 || b == B3B1 || b == B2 || b == B3B2 ) begin
-                nx_state <= S1;
+                nx_state = S1;
             end
 
             else begin
-                nx_state <= S0;
+                nx_state = S0;
             end
         S1:
-            nx_state <= S2;
+            nx_state = S2;
         S2:
-            nx_state <= S3;
+            nx_state = S3;
         S3:
             if (b == B2 || b == B3B2) begin
-                nx_state <= S4;
+                nx_state = S4;
             end
 
             else begin
-                nx_state <= S0;
+                nx_state = S0;
             end
         S4:
-            nx_state <= S5;
+            nx_state = S5;
         S5:
-            nx_state <= S6;
+            nx_state = S6;
         S6:
-            nx_state <= S7;
+            nx_state = S7;
         S7:
-            nx_state <= S0;
+            nx_state = S0;
         default:
-            nx_state <= S0;
+            nx_state = S0;
     endcase
 end
 

@@ -7,15 +7,15 @@ Report : timing
         -max_paths 1
 Design : state_machine
 Version: O-2018.06-SP1
-Date   : Thu Mar 10 10:07:16 2022
+Date   : Fri Mar 11 23:36:25 2022
 ****************************************
 
 Operating Conditions: WCCOM   Library: lsi_10k
 Wire Load Model Mode: top
 
-  Startpoint: pr_state_reg[0]
+  Startpoint: pr_state_reg[2]
               (rising edge-triggered flip-flop clocked by clk)
-  Endpoint: pr_state_reg[2]
+  Endpoint: pr_state_reg[0]
             (rising edge-triggered flip-flop clocked by clk)
   Path Group: clk
   Path Type: max
@@ -24,25 +24,28 @@ Wire Load Model Mode: top
   -----------------------------------------------------------
   clock clk (rise edge)                    0.00       0.00
   clock network delay (ideal)              0.00       0.00
-  pr_state_reg[0]/CP (FD2)                 0.00       0.00 r
-  pr_state_reg[0]/Q (FD2)                  3.58       3.58 r
-  U6/Z (AN2P)                              1.27       4.85 r
-  U14/Z (ND4)                              1.10       5.95 f
-  U13/Z (AO7)                              1.46       7.41 r
-  pr_state_reg[2]/D (FD2)                  0.00       7.41 r
-  data arrival time                                   7.41
+  pr_state_reg[2]/CP (FD2)                 0.00       0.00 r
+  pr_state_reg[2]/Q (FD2)                  3.04       3.04 f
+  U39/Z (NR2)                              2.47       5.51 r
+  U40/Z (ND4)                              1.63       7.14 f
+  U36/Z (NR4)                              4.87      12.01 r
+  U33/Z (IVP)                              0.36      12.37 f
+  U45/Z (ND4)                              1.47      13.84 r
+  U42/Z (AO3)                              0.94      14.78 f
+  pr_state_reg[0]/D (FD4)                  0.00      14.78 f
+  data arrival time                                  14.78
 
   clock clk (rise edge)                  100.00     100.00
   clock network delay (ideal)              0.00     100.00
   clock uncertainty                       -1.00      99.00
-  pr_state_reg[2]/CP (FD2)                 0.00      99.00 r
-  library setup time                      -0.85      98.15
-  data required time                                 98.15
+  pr_state_reg[0]/CP (FD4)                 0.00      99.00 r
+  library setup time                      -0.90      98.10
+  data required time                                 98.10
   -----------------------------------------------------------
-  data required time                                 98.15
-  data arrival time                                  -7.41
+  data required time                                 98.10
+  data arrival time                                 -14.78
   -----------------------------------------------------------
-  slack (MET)                                        90.74
+  slack (MET)                                        83.32
 
 
 1

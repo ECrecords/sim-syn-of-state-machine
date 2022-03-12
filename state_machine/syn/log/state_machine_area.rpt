@@ -3,7 +3,7 @@
 Report : area
 Design : state_machine
 Version: O-2018.06-SP1
-Date   : Thu Mar 10 10:07:17 2022
+Date   : Fri Mar 11 23:36:25 2022
 ****************************************
 
 Library(s) Used:
@@ -11,20 +11,20 @@ Library(s) Used:
     lsi_10k (File: /opt/synopsys/syn/O-2018.06-SP1/libraries/syn/lsi_10k.db)
 
 Number of ports:                            6
-Number of nets:                            19
-Number of cells:                           13
-Number of combinational cells:             10
-Number of sequential cells:                 3
+Number of nets:                            49
+Number of cells:                           37
+Number of combinational cells:             29
+Number of sequential cells:                 8
 Number of macros/black boxes:               0
-Number of buf/inv:                          1
-Number of references:                      11
+Number of buf/inv:                          5
+Number of references:                      13
 
-Combinational area:                 20.000000
-Buf/Inv area:                        1.000000
-Noncombinational area:              27.000000
+Combinational area:                 49.000000
+Buf/Inv area:                        5.000000
+Noncombinational area:              71.000000
 Macro/Black Box area:                0.000000
 Net Interconnect area:      undefined  (No wire load specified)
 
-Total cell area:                    47.000000
+Total cell area:                   120.000000
 Total area:                 undefined
 1
